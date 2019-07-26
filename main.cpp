@@ -9,6 +9,10 @@
 
 int main(int argc, char *argv[])
 {
+#if (QT_VERSION <= QT_VERSION_CHECK(5,6,0))
+#error Sorry,Qt version is too low!
+#endif
+
     QApplication a(argc, argv);
 
     // QsLog 相关配置
@@ -43,9 +47,10 @@ int main(int argc, char *argv[])
     // Qt版本信息
     QLOG_INFO() << "Built with Qt" << QT_VERSION_STR << "running on" << qVersion();
 
-#ifdef _WIN32_
+#ifdef _WIN32
     QLOG_INFO() << "windows";
-#elif
+#endif
+#ifdef _LINUX_
     QLOG_INFO() << "Linux";
 #endif
 
