@@ -12,3 +12,8 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::on_actionModbusConfig_triggered()
+{
+    // TODO:modbus 配置
+}

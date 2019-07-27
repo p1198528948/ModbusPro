@@ -59,3 +59,6 @@ INCLUDEPATH += 3rdparty/libmodbus \
                src
 
 CONFIG += C++11
+
+RESOURCES += \
+    res.qrc

@@ -14,19 +14,22 @@ public:
     explicit Document(QObject *parent = nullptr);
     ~Document();
 
-    void CreateModbus();
-    void releaseModbus();
-
+public:
     modbus_t *m_Modbus;
     MODBUS_PARA m_ModbusPara;
 
-
+    void CreateModbus();
+    void ReleaseModbus();
+    void SetINIModbusSettings();
+    void GetINIModbusSettings();
 signals:
 
 public slots:
 
 private:
-    void InitModbusPara();
+    void InitINI();
+    void SetINIDefault();
+    void InitLog();
 };
 
 #endif // DOCUMENT_H
